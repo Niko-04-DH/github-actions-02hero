@@ -1,27 +1,31 @@
 #this is the name of workflow that will be disl]paly in the action tab 
 name: CICD
+
 on:
-  workflow_dispatch: null
+  workflow_dispatch:
+
 jobs:
   code:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code background
         run: echo "code clone from Github"
-    build:
-      runs-on: ubuntu-latest
-      steps:
-        - name: build docker container
-          run: echo "docker container build"
-    test:
-      runs-on: ubuntu-latest
-      steps:
-        - name: test the container
-          run: echo "testing the container"
-    deploy:
-      runs-on: ubuntu-latest
-      steps:
-        - name: deploying the app
-          run: echo "docker compose deploy the app"
 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build docker container
+        run: echo "docker container build"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test the container
+        run: echo "testing the container"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploying the app
+        run: echo "docker compose deploy the app"
    
