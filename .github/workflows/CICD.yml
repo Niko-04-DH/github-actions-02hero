@@ -17,7 +17,7 @@ jobs:
      runs-on: ubuntu-latest
      steps:
        -name: build docker container
-        run: echo "docker container build "
+        run: echo "docker container build"
 
    test:
      runs-on: ubuntu-latest
