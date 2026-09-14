@@ -10,7 +10,7 @@ jobs:
  code:
    runs-on: ubuntu-latest
    steps:
-     - name: checkout code background: 
+     - name: checkout code background
        run: echo "code clone from Github"
 
    build:
