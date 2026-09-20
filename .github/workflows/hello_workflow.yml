@@ -1,10 +1,11 @@
 #this is workflow name
-name: hello workflow
+name: hello 
 
 # runs on trigger
 on:
-  workflow_dispatch:
-
+  push:
+    branches: [main]
+       
 #these ar evjobs inside workflow
 jobs:
 
