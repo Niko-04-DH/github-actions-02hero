@@ -6,6 +6,9 @@ on:
   push:
     branches: [main]
     
+    paths:
+      - '**.html'
+    
        
 #these ar evjobs inside workflow
 jobs:
