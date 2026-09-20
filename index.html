@@ -1,133 +1,1015 @@
-<!-- Option A: Clean Name + Role -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shubhendu Dhepe | Cloud & DevOps Engineer</title>
+  <meta name="description" content="Portfolio of Shubhendu Dhepe - DevOps & Cloud Engineer specializing in AWS, Kubernetes, Docker, CI/CD, Ansible, and Python Automation." />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Configuration for Custom Colors & Fonts -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            darkBg: '#090d16',
+            glassDark: 'rgba(15, 23, 42, 0.65)',
+            glassBorder: 'rgba(255, 255, 255, 0.08)',
+            cyanGlow: '#06b6d4',
+            purpleGlow: '#8b5cf6',
+            emeraldGlow: '#10b981',
+          },
+          animation: {
+            'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float-slow': 'float 8s ease-in-out infinite',
+            'float-delayed': 'float 9s ease-in-out 3s infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-14px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090d16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+
+    /* Glassmorphic Layering */
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+    .glass-panel:hover {
+      border-color: rgba(6, 182, 212, 0.28);
+      box-shadow: 0 12px 35px -8px rgba(6, 182, 212, 0.15);
+    }
+
+    .glass-pill {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(135deg, #f8fafc 0%, #38bdf8 50%, #a855f7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-accent {
+      background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+    }
+
+    /* Ambient glow meshes */
+    .glow-sphere {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(95px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.28;
+    }
+
+    /* Terminal blinking cursor */
+    .cursor-blink {
+      display: inline-block;
+      width: 7px;
+      height: 15px;
+      background-color: #38bdf8;
+      vertical-align: middle;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+  </style>
 </head>
-<body>
 
-    <!-- Header & Navigation -->
-    <header>
-        <table width="100%" cellpadding="10">
-            <tr>
-                <td><h1>Jane Doe</h1></td>
-                <td align="right">
-                    <nav>
-                        <a href="#about">About</a> | 
-                        <a href="#skills">Skills</a> | 
-                        <a href="#projects">Projects</a> | 
-                        <a href="#contact">Contact</a>
-                    </nav>
-                </td>
-            </tr>
-        </table>
-    </header>
+<body class="bg-darkBg text-slate-200 font-sans antialiased overflow-x-hidden relative selection:bg-cyan-500 selection:text-white">
 
-    <hr>
+  <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+    <div class="glow-sphere w-[550px] h-[550px] bg-cyan-600 top-[-8%] left-[-10%] animate-pulse-slow"></div>
+    <div class="glow-sphere w-[600px] h-[600px] bg-purple-700 top-[35%] right-[-15%] animate-float-slow"></div>
+    <div class="glow-sphere w-[500px] h-[500px] bg-emerald-600 bottom-[10%] left-[20%] opacity-20"></div>
+    <!-- Fine dotted background overlay -->
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
+  </div>
 
-    <!-- Hero / About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <table width="100%" cellpadding="10">
-            <tr>
-                <td width="30%" valign="top">
-                    <!-- Placeholder for profile image -->
-                    <img src="https://placeholder.com" alt="Jane Doe Profile Picture" width="150" height="150">
-                </td>
-                <td width="70%" valign="top">
-                    <h3>Hello! I am a passionate Web Developer.</h3>
-                    <p>Welcome to my minimalist personal portfolio. I build clean, efficient, and semantic web experiences. This website is constructed using pure HTML to demonstrate foundational web architecture and native layout flow.</p>
-                </p>
-                </td>
-            </tr>
-        </table>
+  <header class="fixed top-4 inset-x-0 z-50 flex justify-center px-4">
+    <nav class="glass-pill px-5 py-2.5 rounded-full flex items-center justify-between gap-6 max-w-5xl w-full shadow-2xl transition-all duration-300">
+      
+      <!-- Brand Logo / Monogram -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          <div class="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center">
+            <span class="font-mono font-bold text-sm text-cyan-400">&gt;SD</span>
+          </div>
+        </div>
+        <div class="hidden sm:block">
+          <span class="font-semibold tracking-tight text-white group-hover:text-cyan-400 transition-colors">Shubhendu Dhepe</span>
+          <span class="block text-[10px] font-mono text-slate-400 tracking-wider">CLOUD_ENGINEER</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex items-center gap-1 font-medium text-sm text-slate-300">
+        <a href="#about" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all">About</a>
+        <a href="#skills" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all">Skills</a>
+        <a href="#experience" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all">Experience</a>
+        <a href="#terminal" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all">Terminal</a>
+        <a href="#projects" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all">Architecture</a>
+        <a href="#pipeline" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all">CI/CD</a>
+      </div>
+
+      <!-- Live Status & Contact CTA -->
+      <div class="flex items-center gap-3">
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-mono">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>Online / Available</span>
+        </div>
+        <a href="#contact" class="px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-md shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all active:scale-95">
+          Contact Me
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="relative z-10 pt-28 sm:pt-32">
+
+    <section id="hero" class="min-h-[85vh] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-center relative">
+      
+      <!-- Top Engineer Status Pill -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-mono mb-6 animate-pulse-slow">
+        <i data-lucide="cloud" class="w-4 h-4 text-cyan-400"></i>
+        <span>Cloud & DevOps Engineer &bull; Infrastructure Architect</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight max-w-4xl leading-[1.12] mb-6">
+        Architecting Resilient <br class="hidden sm:inline" />
+        <span class="gradient-text">Cloud Infrastructure</span> &amp; Automated CI/CD
+      </h1>
+
+      <p class="text-slate-400 text-base sm:text-lg md:text-xl max-w-2xl font-light mb-10 leading-relaxed">
+        Specializing in AWS cloud provisioning, container orchestration with Kubernetes & Docker, infrastructure as code, and production-grade CI/CD automation pipelines.
+      </p>
+
+      <!-- Primary Hero CTAs -->
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#projects" class="px-7 py-3.5 rounded-xl font-medium text-sm sm:text-base text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all flex items-center gap-2 active:scale-95">
+          <i data-lucide="layers" class="w-4 h-4"></i>
+          Explore Architecture
+        </a>
+        <a href="#terminal" class="px-7 py-3.5 rounded-xl font-medium text-sm sm:text-base text-slate-200 glass-panel hover:bg-slate-800/60 hover:text-cyan-400 transition-all flex items-center gap-2 active:scale-95">
+          <i data-lucide="terminal" class="w-4 h-4"></i>
+          Launch Live Terminal
+        </a>
+      </div>
+
+      <!-- Quick Tech Floating Badges -->
+      <div class="mt-14 pt-8 border-t border-slate-800/80 w-full max-w-3xl flex flex-wrap justify-center items-center gap-3 sm:gap-6 text-xs sm:text-sm font-mono text-slate-400">
+        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg glass-panel hover:text-cyan-300 transition-colors">
+          <i data-lucide="server" class="w-4 h-4 text-cyan-400"></i> AWS (EC2/S3/VPC/IAM)
+        </span>
+        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg glass-panel hover:text-blue-300 transition-colors">
+          <i data-lucide="box" class="w-4 h-4 text-blue-400"></i> Docker &amp; K8s
+        </span>
+        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg glass-panel hover:text-purple-300 transition-colors">
+          <i data-lucide="git-branch" class="w-4 h-4 text-purple-400"></i> CI/CD Automation
+        </span>
+        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg glass-panel hover:text-emerald-300 transition-colors">
+          <i data-lucide="cpu" class="w-4 h-4 text-emerald-400"></i> Linux &amp; Python
+        </span>
+      </div>
     </section>
 
-    <hr>
+    <section id="terminal" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">// CLI SANDBOX</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Interactive Infrastructure Shell</h2>
+        </div>
+        <div class="hidden sm:block text-xs font-mono text-slate-400">
+          host: <span class="text-slate-200">shubhendu-prod-node</span> (Ubuntu 22.04 LTS)
+        </div>
+      </div>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6)</li>
-            <li><strong>Tools & Platforms:</strong> Git, GitHub, VS Code</li>
-            <li><strong>Core Competencies:</strong> Semantic Web, Responsive Layout Design, Accessibility</li>
-        </ul>
+      <!-- The Glass Terminal Box -->
+      <div class="rounded-2xl border border-slate-700/60 bg-slate-950/80 backdrop-blur-xl shadow-2xl overflow-hidden">
+        <!-- Terminal Header -->
+        <div class="px-4 py-3 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+            <span class="ml-2 text-xs font-mono text-slate-400">shubhendu@cloud-terminal: ~</span>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="runCommand('help')" class="px-2.5 py-1 rounded text-[11px] font-mono bg-slate-800 text-cyan-400 hover:bg-slate-700 transition">help</button>
+            <button onclick="clearTerminal()" class="px-2.5 py-1 rounded text-[11px] font-mono bg-slate-800 text-slate-300 hover:bg-slate-700 transition">clear</button>
+          </div>
+        </div>
+
+        <!-- Terminal Quick Action Command Buttons -->
+        <div class="px-4 py-2 bg-slate-900/40 border-b border-slate-800/80 flex flex-wrap gap-2 text-xs font-mono text-slate-400 items-center">
+          <span class="text-[11px] text-slate-500">Quick run:</span>
+          <button onclick="runCommand('whoami')" class="px-2 py-0.5 rounded bg-slate-800/70 hover:bg-cyan-900/40 text-cyan-300 border border-slate-700/50 transition">whoami</button>
+          <button onclick="runCommand('systemctl status infra')" class="px-2 py-0.5 rounded bg-slate-800/70 hover:bg-cyan-900/40 text-cyan-300 border border-slate-700/50 transition">systemctl status infra</button>
+          <button onclick="runCommand('docker ps')" class="px-2 py-0.5 rounded bg-slate-800/70 hover:bg-cyan-900/40 text-cyan-300 border border-slate-700/50 transition">docker ps</button>
+          <button onclick="runCommand('aws ec2 describe-instances')" class="px-2 py-0.5 rounded bg-slate-800/70 hover:bg-cyan-900/40 text-cyan-300 border border-slate-700/50 transition">aws ec2 describe</button>
+          <button onclick="runCommand('cat skills.json')" class="px-2 py-0.5 rounded bg-slate-800/70 hover:bg-cyan-900/40 text-cyan-300 border border-slate-700/50 transition">cat skills.json</button>
+        </div>
+
+        <!-- Terminal Output Stream -->
+        <div id="terminal-body" class="p-5 font-mono text-xs sm:text-sm h-80 overflow-y-auto space-y-3 leading-relaxed text-slate-300">
+          <div class="text-slate-400">
+            Welcome to Shubhendu Dhepe's cloud console terminal [v2.4.0-stable].<br />
+            Type <span class="text-cyan-400 font-semibold">'help'</span> to see all supported operations or click any quick command above.
+          </div>
+          <div id="terminal-output"></div>
+          <div class="flex items-center gap-2 pt-1 text-cyan-400">
+            <span>shubhendu@cloud-terminal:~$</span>
+            <input 
+              id="terminal-input" 
+              type="text" 
+              autocomplete="off" 
+              spellcheck="false" 
+              placeholder="type a command..." 
+              class="flex-1 bg-transparent text-slate-100 outline-none font-mono text-xs sm:text-sm border-none p-0 focus:ring-0" 
+              onkeydown="handleTerminalKey(event)"
+            />
+            <span class="cursor-blink"></span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <hr>
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">// SKILL INVENTORY</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Core Competencies &amp; Toolchain</h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">Engineered for high availability, scalable compute, fault-tolerance, and zero-downtime continuous deployment.</p>
+      </div>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <table width="100%" border="1" cellpadding="10" cellspacing="0">
-            <thead>
-                <tr bgcolor="#f2f2f2">
-                    <th width="30%">Project Name</th>
-                    <th width="50%">Description</th>
-                    <th width="20%">Link</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>E-Commerce Landing Page</strong></td>
-                    <td>A semantic, fast-loading storefront presentation page built with core elements.</td>
-                    <td><a href="https://github.com" target="_blank">View Repository</a></td>
-                </tr>
-                <tr>
-                    <td><strong>Task Management Layout</strong></td>
-                    <td>An organized interface framework demonstrating data presentation through native HTML tables.</td>
-                    <td><a href="https://github.com" target="_blank">View Repository</a></td>
-                </tr>
-            </tbody>
-        </table>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Skill Card 1: Cloud & AWS -->
+        <div class="glass-panel p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 group">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="cloud" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Cloud Platforms &amp; AWS</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Provisioning scalable and secure public cloud infrastructure with strong emphasis on networking and IAM isolation.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-cyan-300 border border-slate-700/60">EC2 &amp; Autoscaling</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-cyan-300 border border-slate-700/60">VPC &amp; Subnets</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-cyan-300 border border-slate-700/60">S3 &amp; Glacier</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-cyan-300 border border-slate-700/60">IAM RBAC</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-cyan-300 border border-slate-700/60">CloudWatch</span>
+          </div>
+        </div>
+
+        <!-- Skill Card 2: Containerization & Kubernetes -->
+        <div class="glass-panel p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 group">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="box" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Containers &amp; Orchestration</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Multi-stage Docker builds, container hardening, microservice lifecycle, and Kubernetes deployments.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-blue-300 border border-slate-700/60">Docker Engine</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-blue-300 border border-slate-700/60">Kubernetes (K8s)</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-blue-300 border border-slate-700/60">Docker Compose</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-blue-300 border border-slate-700/60">Container Registries</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-blue-300 border border-slate-700/60">Pods / Ingress</span>
+          </div>
+        </div>
+
+        <!-- Skill Card 3: CI/CD & Automation -->
+        <div class="glass-panel p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 group">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="workflow" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">CI/CD &amp; Infrastructure as Code</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Designing automated build, test, and release pipelines with automated rollback and declarative configuration.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-purple-300 border border-slate-700/60">Jenkins Declarative</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-purple-300 border border-slate-700/60">GitHub Actions</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-purple-300 border border-slate-700/60">Ansible Playbooks</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-purple-300 border border-slate-700/60">Git Branching Flow</span>
+          </div>
+        </div>
+
+        <!-- Skill Card 4: Linux & Server Administration -->
+        <div class="glass-panel p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="terminal" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Linux &amp; System Administration</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Production server hardening, kernel optimization, SSH key authentication pairs, systemd daemons, and storage.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-emerald-300 border border-slate-700/60">Ubuntu / Debian</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-emerald-300 border border-slate-700/60">Systemd Services</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-emerald-300 border border-slate-700/60">Bash Shell Scripting</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-emerald-300 border border-slate-700/60">Cron &amp; Logrotate</span>
+          </div>
+        </div>
+
+        <!-- Skill Card 5: Scripting & Automation -->
+        <div class="glass-panel p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 group">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="code-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Python &amp; API Tooling</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Custom automation utilities, cloud SDK orchestration (boto3), metric aggregation, and webhook integrations.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-amber-300 border border-slate-700/60">Python 3</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-amber-300 border border-slate-700/60">Boto3 AWS SDK</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-amber-300 border border-slate-700/60">RESTful APIs</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-amber-300 border border-slate-700/60">JSON &amp; YAML Parsers</span>
+          </div>
+        </div>
+
+        <!-- Skill Card 6: Security & Networking -->
+        <div class="glass-panel p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 group">
+          <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Security, SRE &amp; Observability</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Security group auditing, SSL/TLS certificate renewal automation, proactive metric alerting, and SLA maintenance.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-rose-300 border border-slate-700/60">TLS / SSL Certbot</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-rose-300 border border-slate-700/60">Security Groups &amp; ACL</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-rose-300 border border-slate-700/60">CloudWatch Alarms</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-rose-300 border border-slate-700/60">Audit Logs</span>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <hr>
+    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">// TRACK RECORD</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Professional Experience</h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">Delivering enterprise reliability, automation pipelines, and robust platform engineering.</p>
+      </div>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out through the form below or via my professional networks.</p>
+      <div class="relative border-l border-slate-700/80 ml-4 sm:ml-32 space-y-12">
         
-        <form action="#" method="POST">
-            <table cellpadding="5">
-                <tr>
-                    <td><label for="name">Name:</label></td>
-                    <td><input type="text" id="name" name="name" required placeholder="Your Name"></td>
-                </tr>
-                <tr>
-                    <td><label for="email">Email:</label></td>
-                    <td><input type="email" id="email" name="email" required placeholder="your.email@example.com"></td>
-                </tr>
-                <tr>
-                    <td><label for="message">Message:</label></td>
-                    <td><textarea id="message" name="message" rows="5" cols="30" required placeholder="Write your message here..."></textarea></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="submit" value="Send Message"></td>
-                </tr>
-            </table>
-        </form>
+        <!-- Experience 1 -->
+        <div class="relative pl-6 sm:pl-8 group">
+          <!-- Timeline Indicator Node -->
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-cyan-400 shadow-md shadow-cyan-400/50 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="sm:absolute sm:-left-36 top-1 text-xs font-mono text-cyan-400 font-semibold mb-2 sm:mb-0">
+            2023 &mdash; PRESENT
+          </div>
+
+          <div class="glass-panel p-6 sm:p-7 rounded-2xl">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="text-xl font-bold text-white">DevOps &amp; Cloud Platform Engineer</h3>
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Production &amp; SRE</span>
+            </div>
+            <p class="text-slate-400 text-sm font-medium mb-4">Enterprise Infrastructure Automation &amp; Cloud Architecture</p>
+            
+            <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed list-disc list-inside">
+              <li>Designed and maintained automated deployment workflows using <span class="text-white font-medium">Jenkins declarative pipelines</span> and GitHub Actions.</li>
+              <li>Orchestrated multi-tenant containerized microservices across <span class="text-white font-medium">Docker and Kubernetes</span> clusters, ensuring 99.9% application uptime.</li>
+              <li>Configured configuration management via <span class="text-white font-medium">Ansible</span>, automating software provisioning and patching across distributed Ubuntu fleets.</li>
+              <li>Engineered custom Python and Bash utilities for proactive health monitoring and automated log curation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="relative pl-6 sm:pl-8 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-purple-400 shadow-md shadow-purple-400/50 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="sm:absolute sm:-left-36 top-1 text-xs font-mono text-purple-400 font-semibold mb-2 sm:mb-0">
+            PREVIOUS ROLES
+          </div>
+
+          <div class="glass-panel p-6 sm:p-7 rounded-2xl">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="text-xl font-bold text-white">Systems &amp; Infrastructure Specialist</h3>
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-purple-500/10 text-purple-300 border border-purple-500/20">Linux &amp; Networks</span>
+            </div>
+            <p class="text-slate-400 text-sm font-medium mb-4">Server Administration &amp; Distributed Systems</p>
+            
+            <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed list-disc list-inside">
+              <li>Managed large-scale remote Linux instances, system services, systemd timers, and automated backups.</li>
+              <li>Implemented secure identity access management, SSH key hierarchies, and firewall security groups.</li>
+              <li>Automated server diagnostics and performance tuning, slashing manual operational resolution time by over 40%.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <hr>
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">// ARCHITECTURAL BLUEPRINTS</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Featured Infrastructure Projects</h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">Production blueprints demonstrating infrastructure as code, container orchestration, and continuous delivery.</p>
+      </div>
 
-    <!-- Footer -->
-    <footer>
-        <table width="100%">
-            <tr>
-                <td><p>&copy; 2026 Jane Doe. All rights reserved.</p></td>
-                <td align="right">
-                    <a href="https://linkedin.com" target="_blank">LinkedIn</a> | 
-                    <a href="https://github.com" target="_blank">GitHub</a>
-                </td>
-            </tr>
-        </table>
-    </footer>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Project 1: Multi-tier AWS Automated Cluster -->
+        <div class="glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:border-cyan-500/40">
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                <i data-lucide="network" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono text-cyan-400 bg-cyan-400/10 px-2.5 py-1 rounded-full border border-cyan-400/20">AWS VPC Architecture</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-3">
+              High-Availability AWS Multi-Node Infrastructure
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Engineered a highly resilient AWS VPC architecture across dual Availability Zones with public/private subnets, Application Load Balancers, Auto Scaling Groups, and encrypted EBS volumes.
+            </p>
+            <div class="space-y-2 text-xs font-mono text-slate-400 mb-6 bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                <span>Dual AZ failover with zero manual switchover</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                <span>Bastion Host SSH gateway with strictly locked IAM</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 pt-0 border-t border-slate-800/60 flex flex-wrap gap-2 pt-4">
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">AWS EC2</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">ALB</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">VPC Peering</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">CloudWatch</span>
+          </div>
+        </div>
 
+        <!-- Project 2: Microservices K8s CI/CD with Jenkins & Docker -->
+        <div class="glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:border-purple-500/40">
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                <i data-lucide="git-merge" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono text-purple-400 bg-purple-400/10 px-2.5 py-1 rounded-full border border-purple-400/20">CI/CD Engine</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-purple-300 transition-colors mb-3">
+              Automated Containerized CI/CD Deployment Pipeline
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Complete automated deployment pipeline triggering on Git commits, running security scanning, building optimized Docker images, and rolling updates across Kubernetes worker nodes.
+            </p>
+            <div class="space-y-2 text-xs font-mono text-slate-400 mb-6 bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                <span>Zero-downtime rolling deployment strategy</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                <span>Automated artifact tagging &amp; registry push</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 pt-0 border-t border-slate-800/60 flex flex-wrap gap-2 pt-4">
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">Jenkins</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">Docker</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">Kubernetes</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">Ansible</span>
+          </div>
+        </div>
+
+        <!-- Project 3: Ansible Configuration & Server Fleet Provisioning -->
+        <div class="glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:border-emerald-500/40">
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                <i data-lucide="cpu" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono text-emerald-400 bg-emerald-400/10 px-2.5 py-1 rounded-full border border-emerald-400/20">Config Mgmt</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors mb-3">
+              Fleet-Wide Ansible Orchestration &amp; Hardening
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Idempotent Ansible playbooks for automated node bootstrapping, user privilege enforcement, automated SSH credential rotation, and Nginx reverse proxy configurations.
+            </p>
+            <div class="space-y-2 text-xs font-mono text-slate-400 mb-6 bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>Standardized 50+ Linux nodes within minutes</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>CIS benchmark security baselines baked-in</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 pt-0 border-t border-slate-800/60 flex flex-wrap gap-2 pt-4">
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">Ansible</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">Ubuntu LTS</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">Systemd</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">SSH Security</span>
+          </div>
+        </div>
+
+        <!-- Project 4: Python Cloud Resource Automation -->
+        <div class="glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:border-amber-500/40">
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                <i data-lucide="file-code" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-full border border-amber-400/20">Cloud Automation</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-amber-300 transition-colors mb-3">
+              Python Cloud Sentinel &amp; Automated Snapshot Manager
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Custom Python Boto3 automation utility identifying orphaned EBS volumes, taking scheduled incremental snapshots, enforcing retention policies, and sending Slack/Discord audit alerts.
+            </p>
+            <div class="space-y-2 text-xs font-mono text-slate-400 mb-6 bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                <span>Cut unattached cloud storage expenses by 35%</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                <span>Automated weekly disaster recovery snapshot audits</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 pt-0 border-t border-slate-800/60 flex flex-wrap gap-2 pt-4">
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">Python 3</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">Boto3</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">AWS Lambda</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300">Webhooks</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="pipeline" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">// WORKFLOW AUTOMATION</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">GitHub Actions Pipeline Visualizer</h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">Live workflow simulation of the continuous deployment architecture powering this static site.</p>
+      </div>
+
+      <div class="glass-panel p-6 sm:p-8 rounded-2xl">
+        <!-- Pipeline Top bar -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-800">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+              <i data-lucide="check-circle" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="font-mono text-sm font-semibold text-white flex items-center gap-2">
+                Deploy Static Site <span class="text-xs text-slate-400 font-normal">#build-1049</span>
+              </div>
+              <div class="text-xs font-mono text-slate-400">commit: <span class="text-cyan-400">feat(portfolio): modernize glass-ui &amp; terminal</span> on <span class="text-slate-200">main</span></div>
+            </div>
+          </div>
+          <button onclick="simulatePipelineRun()" id="rerun-btn" class="px-3.5 py-2 rounded-lg text-xs font-mono bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 flex items-center gap-2 transition active:scale-95">
+            <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i>
+            <span>Re-run Workflow</span>
+          </button>
+        </div>
+
+        <!-- Pipeline Steps Stepper -->
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 py-8">
+          
+          <!-- Step 1 -->
+          <div id="step-1" class="p-4 rounded-xl bg-slate-900/60 border border-emerald-500/40 flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono text-slate-400">Step 1</span>
+              <span class="step-icon text-emerald-400"><i data-lucide="check" class="w-4 h-4"></i></span>
+            </div>
+            <div class="font-medium text-sm text-white">Checkout Repository</div>
+            <div class="text-[11px] font-mono text-slate-400 mt-1">actions/checkout@v5</div>
+          </div>
+
+          <!-- Step 2 -->
+          <div id="step-2" class="p-4 rounded-xl bg-slate-900/60 border border-emerald-500/40 flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono text-slate-400">Step 2</span>
+              <span class="step-icon text-emerald-400"><i data-lucide="check" class="w-4 h-4"></i></span>
+            </div>
+            <div class="font-medium text-sm text-white">Setup Pages Config</div>
+            <div class="text-[11px] font-mono text-slate-400 mt-1">actions/configure-pages@v5</div>
+          </div>
+
+          <!-- Step 3 -->
+          <div id="step-3" class="p-4 rounded-xl bg-slate-900/60 border border-emerald-500/40 flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono text-slate-400">Step 3</span>
+              <span class="step-icon text-emerald-400"><i data-lucide="check" class="w-4 h-4"></i></span>
+            </div>
+            <div class="font-medium text-sm text-white">Upload Artifacts</div>
+            <div class="text-[11px] font-mono text-slate-400 mt-1">path: '.'</div>
+          </div>
+
+          <!-- Step 4 -->
+          <div id="step-4" class="p-4 rounded-xl bg-slate-900/60 border border-emerald-500/40 flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono text-slate-400">Step 4</span>
+              <span class="step-icon text-emerald-400"><i data-lucide="check" class="w-4 h-4"></i></span>
+            </div>
+            <div class="font-medium text-sm text-white">Deploy to Pages</div>
+            <div class="text-[11px] font-mono text-slate-400 mt-1">actions/deploy-pages@v5</div>
+          </div>
+
+        </div>
+
+        <!-- Workflow Log Console -->
+        <div class="rounded-xl bg-black/60 border border-slate-800 p-4 font-mono text-xs text-slate-300 space-y-1">
+          <div class="text-slate-500">// Execution logs:</div>
+          <div id="pipeline-log-1" class="text-emerald-400">&check; [00:01s] Checked out branch 'main' (HEAD -> 72fba1c)</div>
+          <div id="pipeline-log-2" class="text-emerald-400">&check; [00:03s] Configured GitHub Pages deployment token &amp; route</div>
+          <div id="pipeline-log-3" class="text-emerald-400">&check; [00:06s] Packaged and uploaded static HTML/CSS assets (128 KB)</div>
+          <div id="pipeline-log-4" class="text-emerald-400">&check; [00:09s] Deployed successfully to GitHub Pages edge CDN. URL is live!</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <div class="glass-panel p-8 sm:p-12 rounded-3xl relative overflow-hidden">
+        <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+          <div class="lg:col-span-2 space-y-5">
+            <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">// ABOUT SHUBHENDU</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Bridging Software Logic and Infrastructure Reliability</h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              I am a Cloud &amp; DevOps Engineer passionate about converting manual, brittle deployment procedures into automated, observable, and immutable production ecosystems. 
+            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              With hands-on proficiency in AWS cloud services, containerized workloads with Docker/K8s, CI/CD orchestration with Jenkins and GitHub Actions, and Linux server internals, I architect systems that allow development teams to ship rapidly without breaking production stability.
+            </p>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-800">
+              <div>
+                <div class="text-2xl font-bold font-mono text-cyan-400">99.9%</div>
+                <div class="text-xs text-slate-400">Target Availability</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold font-mono text-purple-400">&lt; 5 min</div>
+                <div class="text-xs text-slate-400">Pipeline Cycle Time</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold font-mono text-emerald-400">100%</div>
+                <div class="text-xs text-slate-400">Infrastructure as Code</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DevOps Philosophy Card -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-700/60 space-y-4">
+            <h3 class="text-sm font-mono text-slate-200 font-semibold uppercase tracking-wider flex items-center gap-2">
+              <i data-lucide="terminal-square" class="w-4 h-4 text-cyan-400"></i>
+              Core Principles
+            </h3>
+            <div class="space-y-3 text-xs text-slate-300">
+              <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+                <strong class="text-white block mb-0.5">Automate Everything:</strong>
+                If a task is executed more than once, it belongs in a script or pipeline.
+              </div>
+              <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+                <strong class="text-white block mb-0.5">Immutable Infrastructure:</strong>
+                Replace damaged nodes rather than patching in flight.
+              </div>
+              <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+                <strong class="text-white block mb-0.5">Defense In Depth:</strong>
+                Strict IAM roles, security groups, zero-trust network policies.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
+      <div class="glass-panel p-8 sm:p-14 rounded-3xl relative overflow-hidden border border-cyan-500/20">
+        <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mx-auto mb-6">
+          <i data-lucide="mail" class="w-7 h-7"></i>
+        </div>
+
+        <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">// INITIATE CONNECTION</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">Let's Build Scalable Systems Together</h2>
+        <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8">
+          Looking for a Cloud/DevOps Engineer to streamline your CI/CD pipelines, optimize AWS expenditures, or containerize your microservices? Let's connect.
+        </p>
+
+        <!-- Copyable Contact Action -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <button 
+            onclick="copyEmailToClipboard()" 
+            id="copy-email-btn"
+            class="px-6 py-3 rounded-xl font-mono text-sm text-cyan-300 bg-slate-900 border border-cyan-500/40 hover:bg-slate-800 transition flex items-center gap-2.5 shadow-lg group">
+            <i data-lucide="copy" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+            <span id="copy-email-text">shubhendudhepe@gmail.com</span>
+          </button>
+          
+          <a 
+            href="mailto:shubhendudhepe@gmail.com" 
+            class="px-6 py-3 rounded-xl font-medium text-sm text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 transition shadow-lg shadow-cyan-500/25 active:scale-95 flex items-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            Send Email
+          </a>
+        </div>
+
+        <!-- Social Media / Profiles -->
+        <div class="flex items-center justify-center gap-4 pt-6 border-t border-slate-800 text-slate-400">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg glass-pill hover:text-white hover:border-cyan-400 transition" title="GitHub">
+            <i data-lucide="github" class="w-5 h-5"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg glass-pill hover:text-white hover:border-cyan-400 transition" title="LinkedIn">
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg glass-pill hover:text-white hover:border-cyan-400 transition" title="Twitter/X">
+            <i data-lucide="twitter" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="py-10 border-t border-slate-800/80 text-center text-xs font-mono text-slate-500 px-4">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+        <span>Built with Modern Glassmorphism &bull; Tailored for DevOps</span>
+      </div>
+      <div>
+        &copy; <span id="current-year"></span> Shubhendu Dhepe. All systems operational.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification element for copy feedback -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 glass-pill px-4 py-3 rounded-xl border border-cyan-500/40 text-cyan-300 font-mono text-xs flex items-center gap-2 shadow-2xl">
+    <i data-lucide="check" class="w-4 h-4 text-cyan-400"></i>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Set Dynamic Year in Footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Terminal Commands Dataset
+    const terminalCommands = {
+      'help': `Available commands:
+  - whoami                    : Display engineer profile identity
+  - systemctl status infra     : Inspect overall cloud health & service state
+  - docker ps                 : List active production container nodes
+  - aws ec2 describe-instances: Query AWS multi-region infrastructure instances
+  - cat skills.json           : Output structured technical skill list
+  - clear                     : Clear terminal history`,
+      
+      'whoami': `User       : Shubhendu Dhepe
+Role       : Cloud & DevOps Engineer
+Focus      : AWS, Kubernetes, Jenkins, Ansible, Linux System Administration
+Status     : Ready for deployment & infrastructure challenges`,
+
+      'systemctl status infra': `● infra.service - Production Cloud Infrastructure & Cluster Fleet
+     Loaded: loaded (/etc/systemd/system/infra.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sun 2026-09-20 08:30:00 UTC
+   Main PID: 1042 (cloud-orchestrator)
+      Tasks: 48 (limit: 4915)
+     Memory: 1.4G
+     CGroup: /system.slice/infra.service
+             ├─1042 /usr/local/bin/k8s-proxy --ingress
+             └─1098 /usr/bin/python3 /opt/automation/health_monitor.py
+[OK] Health check pass: All 12 node clusters responsive. Latency 14ms.`,
+
+      'docker ps': `CONTAINER ID   IMAGE                 COMMAND                  STATUS          PORTS                  NAMES
+a49f801c32b1   nginx:alpine          "/docker-entrypoint.…"   Up 3 days       0.0.0.0:443->443/tcp   web-ingress-proxy
+81c0e817bf49   node-api:v2.4.1       "node server.js"         Up 3 days       0.0.0.0:8080->8080     api-service-prod
+09bb7142afec   jenkins/jenkins:lts   "/usr/bin/tini -- /u…"   Up 2 weeks      0.0.0.0:9000->8080     jenkins-master
+3d4b68e91823   redis:7-alpine        "docker-entrypoint.s…"   Up 4 weeks      6379/tcp               redis-cache`,
+
+      'aws ec2 describe-instances': `{
+  "Reservations": [
+    {
+      "InstanceId": "i-0a81423ff93c760",
+      "InstanceType": "t3.large",
+      "State": { "Name": "running", "Code": 16 },
+      "VpcId": "vpc-083f2a10",
+      "Placement": { "AvailabilityZone": "us-east-1a" },
+      "Tags": [{ "Key": "Name", "Value": "prod-k8s-control-plane" }]
+    },
+    {
+      "InstanceId": "i-091f3490b8f441a",
+      "InstanceType": "m5.xlarge",
+      "State": { "Name": "running", "Code": 16 },
+      "VpcId": "vpc-083f2a10",
+      "Placement": { "AvailabilityZone": "us-east-1b" },
+      "Tags": [{ "Key": "Name", "Value": "prod-worker-node-01" }]
+    }
+  ]
+}`,
+
+      'cat skills.json': `{
+  "cloud": ["AWS (EC2, S3, VPC, IAM, CloudWatch, ALB)"],
+  "containers": ["Docker", "Kubernetes", "Container Registries"],
+  "ci_cd": ["Jenkins Declarative Pipelines", "GitHub Actions"],
+  "automation": ["Ansible Playbooks", "Python (Boto3)", "Bash Scripting"],
+  "os": ["Ubuntu Server", "Linux Kernel Systemd", "Networking & SSL/TLS"]
+}`
+    };
+
+    // Terminal Execution Engine
+    function runCommand(cmd) {
+      const outputDiv = document.getElementById('terminal-output');
+      const terminalBody = document.getElementById('terminal-body');
+      
+      const normalizedCmd = cmd.trim().toLowerCase();
+
+      // Create command echo
+      const cmdLine = document.createElement('div');
+      cmdLine.className = 'text-cyan-400 font-semibold';
+      cmdLine.innerHTML = `<span class="text-slate-500">shubhendu@cloud-terminal:~$</span> ${cmd}`;
+      outputDiv.appendChild(cmdLine);
+
+      // Handle output
+      const resDiv = document.createElement('pre');
+      resDiv.className = 'text-slate-300 whitespace-pre-wrap font-mono text-xs sm:text-sm pl-2 border-l border-slate-700 mt-1 mb-2';
+
+      if (normalizedCmd === 'clear') {
+        outputDiv.innerHTML = '';
+        return;
+      } else if (terminalCommands[normalizedCmd]) {
+        resDiv.textContent = terminalCommands[normalizedCmd];
+      } else if (normalizedCmd === '') {
+        // blank enter
+        return;
+      } else {
+        resDiv.className += ' text-rose-400';
+        resDiv.textContent = `bash: command not found: ${cmd}. Type 'help' for valid commands.`;
+      }
+
+      outputDiv.appendChild(resDiv);
+      terminalBody.scrollTop = terminalBody.scrollHeight;
+      lucide.createIcons();
+    }
+
+    function clearTerminal() {
+      document.getElementById('terminal-output').innerHTML = '';
+    }
+
+    function handleTerminalKey(event) {
+      if (event.key === 'Enter') {
+        const input = document.getElementById('terminal-input');
+        const cmd = input.value;
+        if (cmd) {
+          runCommand(cmd);
+          input.value = '';
+        }
+      }
+    }
+
+    // Pipeline Step-by-Step Simulation Trigger
+    let isPipelineRunning = false;
+    function simulatePipelineRun() {
+      if (isPipelineRunning) return;
+      isPipelineRunning = true;
+
+      const btn = document.getElementById('rerun-btn');
+      btn.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i><span>Running...</span>`;
+      lucide.createIcons();
+
+      const steps = [1, 2, 3, 4];
+      const stepNames = [
+        "Checkout Repository",
+        "Setup Pages Config",
+        "Upload Artifacts",
+        "Deploy to Pages"
+      ];
+
+      // Reset all steps to pending
+      steps.forEach(s => {
+        const el = document.getElementById(`step-${s}`);
+        el.className = "p-4 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between";
+        el.querySelector('.step-icon').innerHTML = `<i data-lucide="circle-dashed" class="w-4 h-4 text-slate-500 animate-spin"></i>`;
+        document.getElementById(`pipeline-log-${s}`).className = "text-slate-600";
+      });
+      lucide.createIcons();
+
+      let current = 1;
+      const interval = setInterval(() => {
+        if (current <= 4) {
+          const el = document.getElementById(`step-${current}`);
+          el.className = "p-4 rounded-xl bg-slate-900/60 border border-emerald-500/40 flex flex-col justify-between";
+          el.querySelector('.step-icon').innerHTML = `<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>`;
+          document.getElementById(`pipeline-log-${current}`).className = "text-emerald-400";
+          lucide.createIcons();
+          current++;
+        } else {
+          clearInterval(interval);
+          isPipelineRunning = false;
+          btn.innerHTML = `<i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i><span>Re-run Workflow</span>`;
+          lucide.createIcons();
+          showToast("Pipeline completed in 00:09s!");
+        }
+      }, 700);
+    }
+
+    // Safe clipboard copy using document.execCommand
+    function copyEmailToClipboard() {
+      const email = 'shubhendudhepe@gmail.com';
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = email;
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      
+      try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+          showToast("Email copied to clipboard: " + email);
+        } else {
+          showToast("Press Ctrl+C to copy: " + email);
+        }
+      } catch (err) {
+        showToast("Email: " + email);
+      }
+      document.body.removeChild(tempTextArea);
+    }
+
+    // Floating Toast Notification
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3200);
+    }
+  </script>
 </body>
 </html>
