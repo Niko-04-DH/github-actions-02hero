@@ -28,8 +28,5 @@ jobs:
                 context: .
                 push: true
                 tags: |
-                    ${{ secrets.DOCKERHUB_USER }}/github-actions-app:${{ github.GITHUB_HEAD_REF}}
-                    ${{ secrets.DOCKERHUB_USER }}/github-actions-app:latest
-                    ${{ secrets.DOCKERHUB_USER }}/github-actions-app:${{ github.GITHUB_SHA}}
-
-                    "NikoBellic/github-actions-app:latest"
+                  ${{ vars.DOCKERHUB_USER }}/github-actions-app:latest
+                  ${{ vars.DOCKERHUB_USER }}/github-actions-app:${{ github.sha }}
